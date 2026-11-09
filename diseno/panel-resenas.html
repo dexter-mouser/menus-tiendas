@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reseñas · Panel</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="js/panel-resenas.js"></script>
+</head>
+<body aria-busy="true">
+  <div class="panel">
+    <!-- Barra lateral: logo, navegación y salir -->
+    <header class="lateral">
+      <div class="fila entre">
+        <div class="fila">
+          <div class="marca" aria-hidden="true" data-logo-negocio>LT</div>
+          <p class="cabecera-nombre" data-nombre-negocio>La Terraza</p>
+        </div>
+        <a class="boton-icono neutro solo-movil" href="login.html" aria-label="Cerrar sesión"><svg class="icono" aria-hidden="true"><use href="icons.svg#salir"/></svg></a>
+      </div>
+      <nav class="nav-admin" aria-label="Panel">
+        <a href="admin.html"><svg class="icono" aria-hidden="true"><use href="icons.svg#mesa"/></svg>Mesas</a>
+        <a href="cocina.html" data-modulo="cocina"><svg class="icono" aria-hidden="true"><use href="icons.svg#fuego"/></svg>Cocina</a>
+        <a href="panel-resenas.html" aria-current="page" data-modulo="resenas"><svg class="icono" aria-hidden="true"><use href="icons.svg#resenas"/></svg>Reseñas</a>
+        <a href="configuracion.html"><svg class="icono" aria-hidden="true"><use href="icons.svg#ajustes"/></svg>Ajustes</a>
+      </nav>
+      <div class="lateral-pie nav-admin">
+        <a href="login.html"><svg class="icono" aria-hidden="true"><use href="icons.svg#salir"/></svg>Cerrar sesión</a>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <h1>Reseñas</h1>
+
+      <div class="dos-columnas">
+        <!-- Lista de reseñas -->
+        <ul class="tarjeta" id="lista-resenas" aria-label="Reseñas recibidas">
+          <li class="tarjeta-seccion fila arriba"><div class="avatar"></div><div class="crece"><p>María C.</p><p>El ajiaco como el de la abuela.</p></div></li>
+          <li class="tarjeta-seccion fila arriba"><div class="avatar"></div><div class="crece"><p>Julián R.</p><p>Pedir desde la mesa fue muy práctico.</p></div></li>
+        </ul>
+
+        <!-- Resumen: promedio y total -->
+        <section class="tarjeta" aria-labelledby="titulo-resumen">
+          <div class="tarjeta-seccion"><h2 id="titulo-resumen">Resumen</h2></div>
+          <div class="tarjeta-seccion centrado">
+            <p class="promedio" data-promedio>4,5</p>
+            <p class="puntaje-hueco" data-estrellas-promedio></p>
+            <p class="suave chico" data-total-resenas>2 reseñas</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

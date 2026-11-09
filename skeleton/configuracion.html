@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="panel">
+    <!-- Barra lateral: logo, navegación y salir -->
+    <nav class="lateral" aria-hidden="true">
+      <div class="fila"><div class="bloque avatar"></div><div class="bloque linea" style="width: 100px"></div></div>
+      <div class="nav">
+        <div class="bloque linea"></div>
+        <div class="bloque linea"></div>
+        <div class="bloque linea"></div>
+        <div class="bloque linea"></div>
+      </div>
+    </nav>
+
+    <main class="pagina">
+      <div class="bloque titulo w40" aria-hidden="true"></div>
+
+      <div class="dos-columnas">
+        <div class="columna">
+          <!-- Datos del restaurante: nombre, logo, moneda -->
+          <div class="tarjeta">
+            <div class="seccion"><div class="bloque linea w40" aria-hidden="true"></div></div>
+            <div class="seccion fila">
+              <div class="bloque avatar" style="width: 72px; height: 72px" aria-hidden="true"></div>
+              <div class="bloque boton-corto" aria-hidden="true"></div>
+            </div>
+            <div class="seccion">
+              <div class="bloque linea w40" aria-hidden="true"></div>
+              <div class="bloque campo" aria-hidden="true"></div>
+              <div class="bloque linea w50" aria-hidden="true"></div>
+              <div class="bloque campo" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Carta: categorías y platos -->
+          <div class="tarjeta">
+            <div class="seccion fila entre"><div class="bloque linea w40" aria-hidden="true"></div><div class="bloque boton-corto" aria-hidden="true"></div></div>
+            <div class="seccion fila">
+              <div class="bloque miniatura" style="width: 56px; height: 56px" aria-hidden="true"></div>
+              <div class="crece"><div class="bloque linea w60" aria-hidden="true"></div><div class="bloque linea w40" aria-hidden="true"></div></div>
+              <div class="bloque avatar-chico" aria-hidden="true"></div>
+            </div>
+            <div class="seccion fila">
+              <div class="bloque miniatura" style="width: 56px; height: 56px" aria-hidden="true"></div>
+              <div class="crece"><div class="bloque linea w70" aria-hidden="true"></div><div class="bloque linea w40" aria-hidden="true"></div></div>
+              <div class="bloque avatar-chico" aria-hidden="true"></div>
+            </div>
+            <div class="seccion fila">
+              <div class="bloque miniatura" style="width: 56px; height: 56px" aria-hidden="true"></div>
+              <div class="crece"><div class="bloque linea w50" aria-hidden="true"></div><div class="bloque linea w40" aria-hidden="true"></div></div>
+              <div class="bloque avatar-chico" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columna">
+          <!-- Módulos activos: interruptores -->
+          <div class="tarjeta">
+            <div class="seccion"><div class="bloque linea w50" aria-hidden="true"></div></div>
+            <div class="seccion fila entre"><div class="bloque linea w50" aria-hidden="true"></div><div class="bloque chip" style="width: 48px; height: 28px" aria-hidden="true"></div></div>
+            <div class="seccion fila entre"><div class="bloque linea w40" aria-hidden="true"></div><div class="bloque chip" style="width: 48px; height: 28px" aria-hidden="true"></div></div>
+            <div class="seccion fila entre"><div class="bloque linea w60" aria-hidden="true"></div><div class="bloque chip" style="width: 48px; height: 28px" aria-hidden="true"></div></div>
+          </div>
+
+          <!-- Guardar -->
+          <div class="bloque boton" aria-hidden="true"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

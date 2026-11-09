@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estado del pedido</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="js/pedido.js"></script>
+</head>
+<body aria-busy="true">
+  <!-- Cabecera: volver a la carta y mesa -->
+  <header class="cabecera">
+    <div class="contenedor fila entre">
+      <div class="fila">
+        <a class="boton-icono neutro" href="index.html" aria-label="Volver a la carta"><svg class="icono" aria-hidden="true"><use href="icons.svg#volver"/></svg></a>
+        <p class="cabecera-nombre" data-nombre-negocio>La Terraza</p>
+      </div>
+      <span class="etiqueta" data-mesa>Mesa 1</span>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <!-- Sin pedido -->
+    <section class="tarjeta vacio" hidden>
+      <div class="tarjeta-seccion centrado">
+        <span class="foto vacio-icono" aria-hidden="true"><svg class="icono"><use href="icons.svg#plato"/></svg></span>
+        <h1>Aún no has hecho un pedido</h1>
+        <p class="suave">Elige tus platos en la carta y envíalos desde aquí mismo.</p>
+        <a class="boton" href="index.html">Ver la carta</a>
+      </div>
+    </section>
+
+    <div class="dos-columnas" id="detalle-pedido">
+      <!-- Pasos: recibido, preparando, listo -->
+      <section class="tarjeta" aria-labelledby="titulo-estado">
+        <div class="tarjeta-seccion">
+          <h1 id="titulo-estado" data-numero>Pedido #128</h1>
+          <p class="suave" data-hora>Enviado a las 8:42 p. m.</p>
+        </div>
+        <div class="tarjeta-seccion">
+          <ol class="pasos" aria-live="polite">
+            <li class="paso" data-paso="nuevo">
+              <span class="icono-paso"><svg class="icono" aria-hidden="true"><use href="icons.svg#check"/></svg></span>
+              <div class="crece"><p class="paso-titulo">Recibido</p><p class="suave chico">La cocina ya tiene tu pedido.</p></div>
+            </li>
+            <li class="paso" data-paso="preparando">
+              <span class="icono-paso"><svg class="icono" aria-hidden="true"><use href="icons.svg#fuego"/></svg></span>
+              <div class="crece"><p class="paso-titulo">Preparando</p><p class="suave chico">Estamos cocinando tus platos.</p></div>
+            </li>
+            <li class="paso" data-paso="listo">
+              <span class="icono-paso"><svg class="icono" aria-hidden="true"><use href="icons.svg#plato"/></svg></span>
+              <div class="crece"><p class="paso-titulo">Listo</p><p class="suave chico">Te lo llevamos a la mesa.</p></div>
+            </li>
+          </ol>
+        </div>
+        <div class="tarjeta-seccion acciones">
+          <a class="boton boton-secundario" href="resenas.html" data-modulo="resenas">
+            <svg class="icono" aria-hidden="true"><use href="icons.svg#estrella"/></svg>
+            Dejar una reseña
+          </a>
+          <a class="boton boton-secundario" href="index.html">
+            <svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg>
+            Pedir algo más
+          </a>
+        </div>
+      </section>
+
+      <!-- Lo pedido -->
+      <section class="tarjeta" aria-labelledby="titulo-detalle">
+        <div class="tarjeta-seccion"><h2 id="titulo-detalle">Tu pedido</h2></div>
+        <ul class="tarjeta-seccion" id="lineas-pedido">
+          <li class="linea-total"><span>Bandeja paisa</span><span class="suave">×1</span></li>
+          <li class="linea-total"><span>Empanadas de pipián</span><span class="suave">×1</span></li>
+        </ul>
+        <p class="tarjeta-seccion nota" data-notas hidden></p>
+        <div class="tarjeta-seccion">
+          <p class="linea-total grande"><span>Total</span><span data-total>$ 0</span></p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

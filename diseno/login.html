@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="js/login.js"></script>
+</head>
+<body aria-busy="true">
+  <main class="acceso">
+    <!-- Formulario de acceso -->
+    <form class="tarjeta" id="form-login" novalidate>
+      <div class="tarjeta-seccion centrado">
+        <div class="marca" aria-hidden="true" data-logo-negocio>LT</div>
+        <h1>Panel de <span data-nombre-negocio>La Terraza</span></h1>
+      </div>
+
+      <!-- Acceso de prueba: solo se muestra si la configuración del cliente tiene el modo demo activo -->
+      <div class="tarjeta-seccion" data-modulo="demo">
+        <section class="acceso-prueba" aria-labelledby="titulo-prueba">
+          <h2 id="titulo-prueba" class="chico">Acceso de prueba</h2>
+          <dl>
+            <div class="dato-copiable">
+              <dt class="suave chico">Usuario</dt>
+              <dd id="dato-usuario">admin@laterraza.co</dd>
+              <button type="button" class="boton-icono" data-copiar="dato-usuario" data-aviso="Usuario copiado" aria-label="Copiar usuario">
+                <svg class="icono" aria-hidden="true"><use href="icons.svg#copiar"/></svg>
+              </button>
+            </div>
+            <div class="dato-copiable">
+              <dt class="suave chico">Clave</dt>
+              <dd id="dato-clave">terraza-2026</dd>
+              <button type="button" class="boton-icono" data-copiar="dato-clave" data-aviso="Clave copiada" aria-label="Copiar clave">
+                <svg class="icono" aria-hidden="true"><use href="icons.svg#copiar"/></svg>
+              </button>
+            </div>
+          </dl>
+          <p class="aviso-copiado chico" role="status"></p>
+        </section>
+      </div>
+
+      <div class="tarjeta-seccion">
+        <div class="campo-grupo">
+          <label for="correo">Correo</label>
+          <input class="campo" id="correo" name="correo" type="email" autocomplete="username" placeholder="admin@laterraza.co" required>
+        </div>
+        <div class="campo-grupo">
+          <label for="clave">Contraseña</label>
+          <input class="campo" id="clave" name="clave" type="password" autocomplete="current-password" required>
+        </div>
+        <p class="error-campo" id="error-login" role="alert" hidden>Correo o contraseña incorrectos.</p>
+      </div>
+      <div class="tarjeta-seccion">
+        <button type="submit" class="boton boton-ancho">Ingresar</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

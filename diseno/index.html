@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="js/carta.js"></script>
+</head>
+<body aria-busy="true">
+  <!-- Cabecera: logo, nombre y mesa -->
+  <header class="cabecera">
+    <div class="contenedor fila entre">
+      <div class="fila">
+        <div class="marca" aria-hidden="true" data-logo-negocio>LT</div>
+        <p class="cabecera-nombre" data-nombre-negocio>La Terraza</p>
+      </div>
+      <span class="etiqueta" data-mesa>Mesa 1</span>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <h1 class="solo-lector">Carta</h1>
+
+    <!-- Aviso de pedido en curso -->
+    <a class="tarjeta pedido-en-curso" href="pedido.html" hidden>
+      <span class="icono-paso"><svg class="icono" aria-hidden="true"><use href="icons.svg#fuego"/></svg></span>
+      <span class="crece"><b>Tu pedido está en curso</b><span class="suave chico">Toca para ver el estado</span></span>
+      <svg class="icono" aria-hidden="true"><use href="icons.svg#adelante"/></svg>
+    </a>
+
+    <!-- Categorías -->
+    <nav class="categorias" aria-label="Categorías">
+      <a class="chip" href="#entradas" aria-current="true">Entradas</a>
+      <a class="chip" href="#fuertes">Platos fuertes</a>
+      <a class="chip" href="#bebidas">Bebidas</a>
+      <a class="chip" href="#postres">Postres</a>
+    </nav>
+
+    <!-- Entradas -->
+    <section class="seccion-carta" id="entradas" aria-labelledby="titulo-entradas">
+      <h2 id="titulo-entradas">Entradas</h2>
+      <ul class="platos">
+        <li class="tarjeta plato" data-id="empanadas" data-nombre="Empanadas de pipián" data-precio="14000">
+          <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#plato"/></svg></div>
+          <div class="crece">
+            <h3>Empanadas de pipián</h3>
+            <p class="plato-descripcion">Cuatro unidades con ají de maní casero.</p>
+            <p class="precio">$ 14.000</p>
+          </div>
+          <button type="button" class="boton-icono" data-modulo="pedidos" aria-label="Agregar Empanadas de pipián"><svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg></button>
+        </li>
+        <li class="tarjeta plato" data-id="patacones" data-nombre="Patacones con hogao" data-precio="16500">
+          <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#plato"/></svg></div>
+          <div class="crece">
+            <h3>Patacones con hogao</h3>
+            <p class="plato-descripcion">Plátano verde crocante, hogao y queso costeño.</p>
+            <p class="precio">$ 16.500</p>
+          </div>
+          <button type="button" class="boton-icono" data-modulo="pedidos" aria-label="Agregar Patacones con hogao"><svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg></button>
+        </li>
+        <li class="tarjeta plato" data-id="ceviche" data-nombre="Ceviche de camarón" data-precio="24000">
+          <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#plato"/></svg></div>
+          <div class="crece">
+            <h3>Ceviche de camarón</h3>
+            <p class="plato-descripcion">Limón, cebolla morada, cilantro y aguacate.</p>
+            <p class="precio">$ 24.000</p>
+          </div>
+          <button type="button" class="boton-icono" data-modulo="pedidos" aria-label="Agregar Ceviche de camarón"><svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg></button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Platos fuertes -->
+    <section class="seccion-carta" id="fuertes" aria-labelledby="titulo-fuertes">
+      <h2 id="titulo-fuertes">Platos fuertes</h2>
+      <ul class="platos">
+        <li class="tarjeta plato" data-id="bandeja" data-nombre="Bandeja paisa" data-precio="38000">
+          <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#plato"/></svg></div>
+          <div class="crece">
+            <h3>Bandeja paisa</h3>
+            <p class="plato-descripcion">Fríjoles, arroz, chicharrón, carne molida, huevo, arepa y maduro.</p>
+            <p class="precio">$ 38.000</p>
+          </div>
+          <button type="button" class="boton-icono" data-modulo="pedidos" aria-label="Agregar Bandeja paisa"><svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg></button>
+        </li>
+        <li class="tarjeta plato" data-id="ajiaco" data-nombre="Ajiaco santafereño" data-precio="32000">
+          <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#plato"/></svg></div>
+          <div class="crece">
+            <h3>Ajiaco santafereño</h3>
+            <p class="plato-descripcion">Con pollo desmechado, mazorca, crema y alcaparras.</p>
+            <p class="precio">$ 32.000</p>
+          </div>
+          <button type="button" class="boton-icono" data-modulo="pedidos" aria-label="Agregar Ajiaco santafereño"><svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg></button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Bebidas -->
+    <section class="seccion-carta" id="bebidas" aria-labelledby="titulo-bebidas">
+      <h2 id="titulo-bebidas">Bebidas</h2>
+      <ul class="platos">
+        <li class="tarjeta plato" data-id="limonada-coco" data-nombre="Limonada de coco" data-precio="9000">
+          <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#vaso"/></svg></div>
+          <div class="crece">
+            <h3>Limonada de coco</h3>
+            <p class="plato-descripcion">Cremosa, con leche de coco y hielo.</p>
+            <p class="precio">$ 9.000</p>
+          </div>
+          <button type="button" class="boton-icono" data-modulo="pedidos" aria-label="Agregar Limonada de coco"><svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg></button>
+        </li>
+        <li class="tarjeta plato" data-id="jugo-lulo" data-nombre="Jugo de lulo" data-precio="7500">
+          <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#vaso"/></svg></div>
+          <div class="crece">
+            <h3>Jugo de lulo</h3>
+            <p class="plato-descripcion">En agua o en leche.</p>
+            <p class="precio">$ 7.500</p>
+          </div>
+          <button type="button" class="boton-icono" data-modulo="pedidos" aria-label="Agregar Jugo de lulo"><svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg></button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Postres -->
+    <section class="seccion-carta" id="postres" aria-labelledby="titulo-postres">
+      <h2 id="titulo-postres">Postres</h2>
+      <ul class="platos">
+        <li class="tarjeta plato" data-id="tres-leches" data-nombre="Torta tres leches" data-precio="12000">
+          <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#plato"/></svg></div>
+          <div class="crece">
+            <h3>Torta tres leches</h3>
+            <p class="plato-descripcion">Porción individual con canela.</p>
+            <p class="precio">$ 12.000</p>
+          </div>
+          <button type="button" class="boton-icono" data-modulo="pedidos" aria-label="Agregar Torta tres leches"><svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg></button>
+        </li>
+        <li class="tarjeta plato" data-id="brevas" data-nombre="Brevas con arequipe" data-precio="11000">
+          <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#plato"/></svg></div>
+          <div class="crece">
+            <h3>Brevas con arequipe</h3>
+            <p class="plato-descripcion">Con queso campesino.</p>
+            <p class="precio">$ 11.000</p>
+          </div>
+          <button type="button" class="boton-icono" data-modulo="pedidos" aria-label="Agregar Brevas con arequipe"><svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg></button>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Barra fija: resumen del carrito (oculta si está vacío) -->
+  <footer class="barra-carrito" data-modulo="pedidos" hidden>
+    <div class="contenedor">
+      <p><b data-carrito-cantidad>0 productos</b> <span class="suave" data-carrito-total>· $ 0</span></p>
+      <a class="boton" href="carrito.html">
+        <svg class="icono" aria-hidden="true"><use href="icons.svg#bolsa"/></svg>
+        Ver pedido
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

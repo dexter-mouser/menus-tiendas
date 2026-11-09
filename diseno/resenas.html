@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reseñas</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="js/resenas.js"></script>
+</head>
+<body aria-busy="true">
+  <!-- Cabecera: volver y mesa -->
+  <header class="cabecera">
+    <div class="contenedor fila entre">
+      <div class="fila">
+        <a class="boton-icono neutro" href="pedido.html" aria-label="Volver al pedido"><svg class="icono" aria-hidden="true"><use href="icons.svg#volver"/></svg></a>
+        <p class="cabecera-nombre" data-nombre-negocio>La Terraza</p>
+      </div>
+      <span class="etiqueta" data-mesa>Mesa 1</span>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <!-- Formulario: estrellas, nombre, comentario y enviar -->
+    <form class="tarjeta" id="form-resena" novalidate>
+      <div class="tarjeta-seccion">
+        <h1>¿Cómo estuvo todo?</h1>
+        <fieldset>
+          <legend class="solo-lector">Calificación</legend>
+          <div class="estrellas">
+            <input type="radio" name="puntaje" id="p5" value="5" required><label for="p5"><svg class="icono" aria-hidden="true"><use href="icons.svg#estrella"/></svg><span class="solo-lector">5 estrellas</span></label>
+            <input type="radio" name="puntaje" id="p4" value="4"><label for="p4"><svg class="icono" aria-hidden="true"><use href="icons.svg#estrella"/></svg><span class="solo-lector">4 estrellas</span></label>
+            <input type="radio" name="puntaje" id="p3" value="3"><label for="p3"><svg class="icono" aria-hidden="true"><use href="icons.svg#estrella"/></svg><span class="solo-lector">3 estrellas</span></label>
+            <input type="radio" name="puntaje" id="p2" value="2"><label for="p2"><svg class="icono" aria-hidden="true"><use href="icons.svg#estrella"/></svg><span class="solo-lector">2 estrellas</span></label>
+            <input type="radio" name="puntaje" id="p1" value="1"><label for="p1"><svg class="icono" aria-hidden="true"><use href="icons.svg#estrella"/></svg><span class="solo-lector">1 estrella</span></label>
+          </div>
+          <p class="error-campo" id="error-puntaje" hidden>Elige de 1 a 5 estrellas.</p>
+        </fieldset>
+      </div>
+      <div class="tarjeta-seccion">
+        <div class="campo-grupo">
+          <label for="autor">Tu nombre <span class="suave">(opcional)</span></label>
+          <input class="campo" id="autor" name="autor" type="text" autocomplete="given-name" maxlength="40" placeholder="María">
+        </div>
+        <div class="campo-grupo">
+          <label for="comentario">Tu comentario</label>
+          <textarea class="campo" id="comentario" name="comentario" maxlength="300" placeholder="La bandeja estaba deliciosa y llegó rápido."></textarea>
+        </div>
+        <button type="submit" class="boton boton-ancho">Enviar reseña</button>
+      </div>
+    </form>
+
+    <!-- Agradecimiento tras enviar -->
+    <section class="tarjeta gracias" hidden tabindex="-1">
+      <div class="tarjeta-seccion centrado">
+        <span class="icono-paso grande" aria-hidden="true"><svg class="icono"><use href="icons.svg#check"/></svg></span>
+        <h1>¡Gracias por tu reseña!</h1>
+        <p class="suave">Nos ayuda a mejorar cada día.</p>
+        <a class="boton boton-secundario" href="index.html">Volver a la carta</a>
+      </div>
+    </section>
+
+    <!-- Reseñas publicadas -->
+    <section class="pila" aria-labelledby="titulo-resenas">
+      <h2 id="titulo-resenas">Lo que dicen otros</h2>
+      <ul class="tarjeta" id="lista-resenas">
+        <li class="tarjeta-seccion fila arriba">
+          <div class="avatar" aria-hidden="true">MC</div>
+          <div class="crece"><p><b>María C.</b></p><p class="suave">El ajiaco como el de la abuela.</p></div>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajustes · Panel</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="js/configuracion.js"></script>
+</head>
+<body aria-busy="true">
+  <div class="panel">
+    <!-- Barra lateral: logo, navegación y salir -->
+    <header class="lateral">
+      <div class="fila entre">
+        <div class="fila">
+          <div class="marca" aria-hidden="true" data-logo-negocio>LT</div>
+          <p class="cabecera-nombre" data-nombre-negocio>La Terraza</p>
+        </div>
+        <a class="boton-icono neutro solo-movil" href="login.html" aria-label="Cerrar sesión"><svg class="icono" aria-hidden="true"><use href="icons.svg#salir"/></svg></a>
+      </div>
+      <nav class="nav-admin" aria-label="Panel">
+        <a href="admin.html"><svg class="icono" aria-hidden="true"><use href="icons.svg#mesa"/></svg>Mesas</a>
+        <a href="cocina.html" data-modulo="cocina"><svg class="icono" aria-hidden="true"><use href="icons.svg#fuego"/></svg>Cocina</a>
+        <a href="panel-resenas.html" data-modulo="resenas"><svg class="icono" aria-hidden="true"><use href="icons.svg#resenas"/></svg>Reseñas</a>
+        <a href="configuracion.html" aria-current="page"><svg class="icono" aria-hidden="true"><use href="icons.svg#ajustes"/></svg>Ajustes</a>
+      </nav>
+      <div class="lateral-pie nav-admin">
+        <a href="login.html"><svg class="icono" aria-hidden="true"><use href="icons.svg#salir"/></svg>Cerrar sesión</a>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <h1>Ajustes</h1>
+
+      <form class="dos-columnas" id="form-ajustes" novalidate>
+        <div class="pila">
+          <!-- Datos del restaurante: logo, nombre y moneda -->
+          <section class="tarjeta" aria-labelledby="titulo-datos">
+            <div class="tarjeta-seccion"><h2 id="titulo-datos">Restaurante</h2></div>
+            <div class="tarjeta-seccion fila">
+              <div class="marca logo-actual" data-logo-vista><span data-logo-negocio>LT</span></div>
+              <div class="crece">
+                <label class="boton boton-secundario boton-chico ajuste-logo" for="logo">Cambiar logo</label>
+                <p class="suave chico">PNG, JPG o SVG.</p>
+              </div>
+              <input class="solo-lector" id="logo" name="logo" type="file" accept="image/png, image/jpeg, image/svg+xml">
+            </div>
+            <div class="tarjeta-seccion">
+              <div class="campo-grupo">
+                <label for="nombre">Nombre del restaurante</label>
+                <input class="campo" id="nombre" name="nombre" type="text" required maxlength="60" autocomplete="organization">
+                <p class="error-campo" id="error-nombre" hidden>Escribe el nombre del restaurante.</p>
+              </div>
+              <div class="campo-grupo">
+                <label for="moneda">Moneda</label>
+                <select class="campo" id="moneda" name="moneda">
+                  <option value="COP">Peso colombiano (COP)</option>
+                  <option value="USD">Dólar (USD)</option>
+                  <option value="MXN">Peso mexicano (MXN)</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <!-- Carta: platos -->
+          <section class="tarjeta" aria-labelledby="titulo-carta">
+            <div class="tarjeta-seccion fila entre">
+              <h2 id="titulo-carta">Carta</h2>
+              <button type="button" class="boton boton-secundario boton-chico" data-nuevo-plato><svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg>Agregar plato</button>
+            </div>
+            <ul id="lista-platos">
+              <li class="tarjeta-seccion fila plato-config" data-categoria="Platos fuertes" data-precio="38000" data-descripcion="Fríjoles, arroz, chicharrón, carne molida, huevo, arepa y maduro.">
+                <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#plato"/></svg></div>
+                <div class="crece"><h3 data-nombre-plato>Bandeja paisa</h3><p class="suave chico" data-resumen-plato>Platos fuertes · $ 38.000</p></div>
+                <button type="button" class="boton-icono neutro" data-editar-plato aria-label="Editar Bandeja paisa"><svg class="icono" aria-hidden="true"><use href="icons.svg#editar"/></svg></button>
+              </li>
+              <li class="tarjeta-seccion fila plato-config" data-categoria="Platos fuertes" data-precio="32000" data-descripcion="Con pollo desmechado, mazorca, crema y alcaparras.">
+                <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#plato"/></svg></div>
+                <div class="crece"><h3 data-nombre-plato>Ajiaco santafereño</h3><p class="suave chico" data-resumen-plato>Platos fuertes · $ 32.000</p></div>
+                <button type="button" class="boton-icono neutro" data-editar-plato aria-label="Editar Ajiaco santafereño"><svg class="icono" aria-hidden="true"><use href="icons.svg#editar"/></svg></button>
+              </li>
+              <li class="tarjeta-seccion fila plato-config" data-categoria="Entradas" data-precio="14000" data-descripcion="Cuatro unidades con ají de maní casero.">
+                <div class="foto" aria-hidden="true"><svg class="icono"><use href="icons.svg#plato"/></svg></div>
+                <div class="crece"><h3 data-nombre-plato>Empanadas de pipián</h3><p class="suave chico" data-resumen-plato>Entradas · $ 14.000</p></div>
+                <button type="button" class="boton-icono neutro" data-editar-plato aria-label="Editar Empanadas de pipián"><svg class="icono" aria-hidden="true"><use href="icons.svg#editar"/></svg></button>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="pila">
+          <!-- Funciones activas -->
+          <section class="tarjeta" aria-labelledby="titulo-modulos">
+            <div class="tarjeta-seccion"><h2 id="titulo-modulos">Funciones</h2></div>
+            <div class="tarjeta-seccion fila entre"><label for="mod-pedidos">Pedidos desde la mesa</label><input class="interruptor" type="checkbox" id="mod-pedidos" name="pedidos" role="switch"></div>
+            <div class="tarjeta-seccion fila entre"><label for="mod-cocina">Pantalla de cocina</label><input class="interruptor" type="checkbox" id="mod-cocina" name="cocina" role="switch"></div>
+            <div class="tarjeta-seccion fila entre"><label for="mod-resenas">Reseñas</label><input class="interruptor" type="checkbox" id="mod-resenas" name="resenas" role="switch"></div>
+            <div class="tarjeta-seccion fila entre"><label for="mod-demo">Modo demo <span class="suave chico ayuda">Muestra el acceso de prueba en el login</span></label><input class="interruptor" type="checkbox" id="mod-demo" name="modoDemo" role="switch"></div>
+          </section>
+
+          <button type="submit" class="boton boton-ancho">Guardar cambios</button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <!-- Editar o agregar plato -->
+  <dialog class="dialogo" id="dialogo-plato" aria-labelledby="titulo-plato">
+    <form class="pila" id="form-plato" novalidate>
+      <div class="fila entre">
+        <h2 id="titulo-plato">Editar plato</h2>
+        <button type="button" class="boton-icono neutro" data-cerrar aria-label="Cerrar"><svg class="icono" aria-hidden="true"><use href="icons.svg#cerrar"/></svg></button>
+      </div>
+      <div class="campo-grupo">
+        <label for="plato-nombre">Nombre</label>
+        <input class="campo" id="plato-nombre" name="nombre" type="text" required maxlength="50">
+      </div>
+      <div class="campo-grupo">
+        <label for="plato-categoria">Categoría</label>
+        <select class="campo" id="plato-categoria" name="categoria">
+          <option>Entradas</option>
+          <option>Platos fuertes</option>
+          <option>Bebidas</option>
+          <option>Postres</option>
+        </select>
+      </div>
+      <div class="campo-grupo">
+        <label for="plato-precio">Precio</label>
+        <input class="campo" id="plato-precio" name="precio" type="text" inputmode="numeric" pattern="[0-9]{3,7}" required placeholder="25000">
+      </div>
+      <div class="campo-grupo">
+        <label for="plato-descripcion">Descripción</label>
+        <textarea class="campo" id="plato-descripcion" name="descripcion" maxlength="140"></textarea>
+      </div>
+      <p class="error-campo" id="error-plato" hidden>Revisa el nombre y el precio (solo números).</p>
+      <div class="fila acciones-dialogo">
+        <button type="button" class="boton boton-secundario" data-cerrar>Cancelar</button>
+        <button type="submit" class="boton">Guardar plato</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

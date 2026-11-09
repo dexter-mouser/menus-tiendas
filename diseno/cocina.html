@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocina · Panel</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="js/cocina.js"></script>
+</head>
+<body aria-busy="true">
+  <div class="panel">
+    <!-- Barra lateral: logo, navegación y salir -->
+    <header class="lateral">
+      <div class="fila entre">
+        <div class="fila">
+          <div class="marca" aria-hidden="true" data-logo-negocio>LT</div>
+          <p class="cabecera-nombre" data-nombre-negocio>La Terraza</p>
+        </div>
+        <a class="boton-icono neutro solo-movil" href="login.html" aria-label="Cerrar sesión"><svg class="icono" aria-hidden="true"><use href="icons.svg#salir"/></svg></a>
+      </div>
+      <nav class="nav-admin" aria-label="Panel">
+        <a href="admin.html"><svg class="icono" aria-hidden="true"><use href="icons.svg#mesa"/></svg>Mesas</a>
+        <a href="cocina.html" aria-current="page" data-modulo="cocina"><svg class="icono" aria-hidden="true"><use href="icons.svg#fuego"/></svg>Cocina</a>
+        <a href="panel-resenas.html" data-modulo="resenas"><svg class="icono" aria-hidden="true"><use href="icons.svg#resenas"/></svg>Reseñas</a>
+        <a href="configuracion.html"><svg class="icono" aria-hidden="true"><use href="icons.svg#ajustes"/></svg>Ajustes</a>
+      </nav>
+      <div class="lateral-pie nav-admin">
+        <a href="login.html"><svg class="icono" aria-hidden="true"><use href="icons.svg#salir"/></svg>Cerrar sesión</a>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <h1>Cocina</h1>
+
+      <!-- Tablero: nuevos, preparando, listos -->
+      <div class="tablero">
+        <section class="columna-tablero" aria-labelledby="col-nuevo" data-columna="nuevo">
+          <div class="columna-titulo fila entre"><h2 id="col-nuevo">Nuevos</h2><span class="contador-columna" data-cuenta>0</span></div>
+          <div class="pila-tarjetas" aria-live="polite">
+            <article class="tarjeta"><div class="tarjeta-seccion"><h3>Mesa 4</h3><p>1× Bandeja paisa</p></div><div class="tarjeta-seccion"><span class="boton boton-ancho"></span></div></article>
+          </div>
+          <p class="columna-vacia suave chico" hidden>Sin pedidos nuevos</p>
+        </section>
+        <section class="columna-tablero" aria-labelledby="col-preparando" data-columna="preparando">
+          <div class="columna-titulo fila entre"><h2 id="col-preparando">Preparando</h2><span class="contador-columna" data-cuenta>0</span></div>
+          <div class="pila-tarjetas" aria-live="polite">
+            <article class="tarjeta"><div class="tarjeta-seccion"><h3>Mesa 7</h3><p>1× Ceviche de camarón</p></div><div class="tarjeta-seccion"><span class="boton boton-ancho"></span></div></article>
+          </div>
+          <p class="columna-vacia suave chico" hidden>Nada en preparación</p>
+        </section>
+        <section class="columna-tablero" aria-labelledby="col-listo" data-columna="listo">
+          <div class="columna-titulo fila entre"><h2 id="col-listo">Listos</h2><span class="contador-columna" data-cuenta>0</span></div>
+          <div class="pila-tarjetas" aria-live="polite"></div>
+          <p class="columna-vacia suave chico" hidden>Nada por entregar</p>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Plantilla de un pedido -->
+  <template id="plantilla-orden">
+    <article class="tarjeta">
+      <div class="tarjeta-seccion fila entre">
+        <h3 data-mesa-orden></h3>
+        <span class="suave chico fila sin-corte"><svg class="icono" aria-hidden="true"><use href="icons.svg#reloj"/></svg><span data-hora></span></span>
+      </div>
+      <div class="tarjeta-seccion orden">
+        <ul data-lineas></ul>
+        <p class="nota" data-notas hidden></p>
+      </div>
+      <div class="tarjeta-seccion"><button type="button" class="boton boton-ancho" data-avanzar></button></div>
+    </article>
+  </template>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabecera: logo, nombre y mesa -->
+  <header class="cabecera">
+    <div class="pagina">
+      <div class="fila entre">
+        <div class="fila">
+          <div class="bloque avatar" aria-hidden="true"></div>
+          <div class="bloque linea" style="width: 140px" aria-hidden="true"></div>
+        </div>
+        <div class="bloque chip" aria-hidden="true"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pagina">
+    <!-- Categorías -->
+    <nav class="categorias" aria-hidden="true">
+      <div class="bloque chip"></div>
+      <div class="bloque chip"></div>
+      <div class="bloque chip"></div>
+      <div class="bloque chip"></div>
+      <div class="bloque chip"></div>
+    </nav>
+
+    <!-- Platos de una categoría -->
+    <section class="columna">
+      <div class="bloque titulo w40" aria-hidden="true"></div>
+      <div class="lista">
+        <div class="tarjeta"><div class="seccion fila">
+          <div class="bloque miniatura" aria-hidden="true"></div>
+          <div class="crece"><div class="bloque linea w70" aria-hidden="true"></div><div class="bloque linea w90" aria-hidden="true"></div><div class="bloque linea w40" aria-hidden="true"></div></div>
+          <div class="bloque avatar" aria-hidden="true"></div>
+        </div></div>
+        <div class="tarjeta"><div class="seccion fila">
+          <div class="bloque miniatura" aria-hidden="true"></div>
+          <div class="crece"><div class="bloque linea w60" aria-hidden="true"></div><div class="bloque linea w80" aria-hidden="true"></div><div class="bloque linea w40" aria-hidden="true"></div></div>
+          <div class="bloque avatar" aria-hidden="true"></div>
+        </div></div>
+        <div class="tarjeta"><div class="seccion fila">
+          <div class="bloque miniatura" aria-hidden="true"></div>
+          <div class="crece"><div class="bloque linea w80" aria-hidden="true"></div><div class="bloque linea w70" aria-hidden="true"></div><div class="bloque linea w40" aria-hidden="true"></div></div>
+          <div class="bloque avatar" aria-hidden="true"></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="columna">
+      <div class="bloque titulo w50" aria-hidden="true"></div>
+      <div class="lista">
+        <div class="tarjeta"><div class="seccion fila">
+          <div class="bloque miniatura" aria-hidden="true"></div>
+          <div class="crece"><div class="bloque linea w50" aria-hidden="true"></div><div class="bloque linea w90" aria-hidden="true"></div><div class="bloque linea w40" aria-hidden="true"></div></div>
+          <div class="bloque avatar" aria-hidden="true"></div>
+        </div></div>
+        <div class="tarjeta"><div class="seccion fila">
+          <div class="bloque miniatura" aria-hidden="true"></div>
+          <div class="crece"><div class="bloque linea w70" aria-hidden="true"></div><div class="bloque linea w60" aria-hidden="true"></div><div class="bloque linea w40" aria-hidden="true"></div></div>
+          <div class="bloque avatar" aria-hidden="true"></div>
+        </div></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Barra fija: resumen del carrito -->
+  <footer class="barra-fija">
+    <div class="pagina">
+      <div class="fila">
+        <div class="crece"><div class="bloque linea w50" aria-hidden="true"></div></div>
+        <div class="bloque boton-corto" style="width: 160px" aria-hidden="true"></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

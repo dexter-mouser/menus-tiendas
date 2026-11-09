@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "skeleton",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Users/LOQ/AppData/Local/Temp/claude/d154ad3a247284e2/4e54754f-225b-4d0e-a054-4b19c8382d3f/scratchpad/servidor.mjs"],
+      "port": 5500
+    }
+  ]
+}

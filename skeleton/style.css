@@ -1,0 +1,184 @@
+/* Variables */
+:root {
+  --fondo: #fafafa;
+  --tarjeta: #fff;
+  --bloque: #ddd;
+  --separador: #f0f0f0;
+  --sombra: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --radio: 6px;
+  --espacio: 16px;
+  --espacio-grande: 24px;
+  --alto-linea: 22px;
+  --alto-titulo: 32px;
+  --alto-boton: 56px;
+  --ancho-min: 320px;
+  --ancho-max: 1200px;
+  --ancho-lateral: 240px;
+}
+
+/* Base */
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  background: var(--fondo);
+  min-width: var(--ancho-min);
+}
+
+.pagina {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: var(--espacio-grande) var(--espacio);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-grande);
+}
+
+/* Bloques grises */
+.bloque { background: var(--bloque); flex-shrink: 0; }
+.linea { height: var(--alto-linea); border-radius: 999px; }
+.titulo { height: var(--alto-titulo); border-radius: 999px; width: 60%; }
+.boton { height: var(--alto-boton); border-radius: 999px; width: 100%; }
+.boton-corto { height: 44px; border-radius: 999px; width: 120px; }
+.chip { height: 40px; border-radius: 999px; width: 96px; }
+.avatar { width: 48px; height: 48px; border-radius: 50%; }
+.avatar-chico { width: 32px; height: 32px; border-radius: 50%; }
+.imagen { border-radius: var(--radio); width: 100%; aspect-ratio: 4 / 3; }
+.miniatura { border-radius: var(--radio); width: 88px; height: 88px; }
+.qr { border-radius: var(--radio); width: 140px; aspect-ratio: 1; margin: 0 auto; }
+.campo { height: 48px; border-radius: var(--radio); width: 100%; }
+.area { height: 120px; border-radius: var(--radio); width: 100%; }
+.estrella { width: 32px; height: 32px; border-radius: 50%; }
+.contador { height: 40px; width: 112px; border-radius: 999px; }
+
+/* Anchos de texto */
+.w40 { width: 40%; }
+.w50 { width: 50%; }
+.w60 { width: 60%; }
+.w70 { width: 70%; }
+.w80 { width: 80%; }
+.w90 { width: 90%; }
+
+/* Tarjetas y secciones */
+.tarjeta {
+  background: var(--tarjeta);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+}
+
+.seccion {
+  padding: var(--espacio);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.seccion + .seccion { border-top: 2px solid var(--separador); }
+
+/* Utilidades de disposición */
+.fila { display: flex; flex-direction: row; align-items: center; gap: 12px; }
+.crece { flex: 1; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.dos-columnas { display: flex; flex-direction: column; gap: var(--espacio-grande); }
+.entre { justify-content: space-between; }
+.columna { display: flex; flex-direction: column; gap: 12px; }
+
+/* Cabecera del cliente */
+.cabecera {
+  background: var(--tarjeta);
+  box-shadow: var(--sombra);
+}
+
+.cabecera .pagina { padding-top: var(--espacio); padding-bottom: var(--espacio); }
+
+/* Categorías deslizables */
+.categorias {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+/* Lista de platos */
+.lista { display: flex; flex-direction: column; gap: var(--espacio); }
+
+/* Barra fija del carrito */
+.barra-fija {
+  position: sticky;
+  bottom: 0;
+  background: var(--tarjeta);
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.barra-fija .pagina { padding-top: 12px; padding-bottom: 12px; }
+
+/* Pasos del pedido */
+.paso { display: flex; gap: 12px; align-items: flex-start; }
+.linea-vertical { width: 4px; height: 32px; margin-left: 14px; border-radius: 2px; }
+
+/* Login */
+.centrado {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: var(--espacio);
+}
+
+.centrado .tarjeta { width: 100%; max-width: 400px; }
+
+/* Panel administrativo */
+.panel { display: flex; flex-direction: column; min-height: 100vh; }
+
+.lateral {
+  background: var(--tarjeta);
+  box-shadow: var(--sombra);
+  padding: var(--espacio);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.lateral .nav { display: flex; gap: 12px; }
+.lateral .nav .linea { width: 88px; }
+.panel .pagina { flex: 1; }
+
+/* Grids */
+.grid { display: grid; grid-template-columns: 1fr; gap: var(--espacio); }
+
+/* Mesa nueva: espacio vacío para agregar */
+.agregar {
+  border: 2px dashed var(--bloque);
+  border-radius: var(--radio);
+  min-height: 280px;
+  display: grid;
+  place-items: center;
+}
+
+/* Tablero de cocina */
+.tablero { display: grid; grid-template-columns: 1fr; gap: var(--espacio); }
+.tablero .columna { background: var(--separador); border-radius: var(--radio); padding: 12px; }
+
+/* Tablet y escritorio */
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .grid.tres { grid-template-columns: repeat(3, 1fr); }
+  .tablero { grid-template-columns: repeat(3, 1fr); }
+  .dos-columnas { display: grid; grid-template-columns: 2fr 1fr; gap: var(--espacio-grande); align-items: start; }
+
+  .panel { flex-direction: row; }
+  .lateral {
+    width: var(--ancho-lateral);
+    flex-direction: column;
+    align-items: stretch;
+    overflow-x: visible;
+    gap: var(--espacio-grande);
+  }
+  .lateral .nav { flex-direction: column; }
+  .lateral .nav .linea { width: 80%; }
+}
+
+@media (min-width: 1200px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu pedido</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="js/carrito.js"></script>
+</head>
+<body aria-busy="true">
+  <!-- Cabecera: volver y mesa -->
+  <header class="cabecera">
+    <div class="contenedor fila entre">
+      <div class="fila">
+        <a class="boton-icono neutro" href="index.html" aria-label="Volver a la carta"><svg class="icono" aria-hidden="true"><use href="icons.svg#volver"/></svg></a>
+        <p class="cabecera-nombre">Tu pedido</p>
+      </div>
+      <span class="etiqueta" data-mesa>Mesa 1</span>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <h1 class="solo-lector">Tu pedido</h1>
+
+    <!-- Carrito vacío -->
+    <section class="tarjeta vacio" hidden>
+      <div class="tarjeta-seccion centrado">
+        <span class="foto vacio-icono" aria-hidden="true"><svg class="icono"><use href="icons.svg#bolsa"/></svg></span>
+        <h2>Tu pedido está vacío</h2>
+        <p class="suave">Agrega platos desde la carta para empezar.</p>
+        <a class="boton" href="index.html">Ver la carta</a>
+      </div>
+    </section>
+
+    <form class="dos-columnas" id="form-pedido">
+      <div class="pila">
+        <!-- Productos del pedido -->
+        <ul class="tarjeta" aria-label="Productos" id="lista-carrito">
+          <li class="tarjeta-seccion fila">
+            <div class="crece"><h2 class="chico">Bandeja paisa</h2><p class="precio">$ 38.000</p></div>
+            <div class="contador"><span class="boton-icono"></span><output>1</output><span class="boton-icono"></span></div>
+          </li>
+          <li class="tarjeta-seccion fila">
+            <div class="crece"><h2 class="chico">Empanadas de pipián</h2><p class="precio">$ 14.000</p></div>
+            <div class="contador"><span class="boton-icono"></span><output>1</output><span class="boton-icono"></span></div>
+          </li>
+        </ul>
+
+        <!-- Notas para la cocina -->
+        <div class="tarjeta">
+          <div class="tarjeta-seccion campo-grupo">
+            <label for="notas">Notas para la cocina <span class="suave">(opcional)</span></label>
+            <textarea class="campo" id="notas" name="notas" maxlength="200" placeholder="Sin cebolla en la bandeja, por favor"></textarea>
+          </div>
+        </div>
+
+        <a class="boton boton-secundario" href="index.html">
+          <svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg>
+          Agregar más platos
+        </a>
+      </div>
+
+      <!-- Resumen y envío -->
+      <div class="tarjeta resumen">
+        <div class="tarjeta-seccion">
+          <p class="linea-total"><span class="suave">Subtotal</span><span data-subtotal>$ 0</span></p>
+          <p class="linea-total"><span class="suave">Servicio (10 %)</span><span data-servicio>$ 0</span></p>
+        </div>
+        <div class="tarjeta-seccion">
+          <p class="linea-total grande"><span>Total</span><span data-total>$ 0</span></p>
+          <button type="submit" class="boton boton-ancho">Enviar pedido</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <!-- Plantilla de una línea del carrito -->
+  <template id="plantilla-linea">
+    <li class="tarjeta-seccion fila">
+      <div class="crece"><h2 class="chico" data-nombre></h2><p class="precio" data-precio></p></div>
+      <div class="contador">
+        <button type="button" class="boton-icono" data-cambio="-1"><svg class="icono" aria-hidden="true"><use href="icons.svg#menos"/></svg></button>
+        <output aria-label="Cantidad" data-cantidad></output>
+        <button type="button" class="boton-icono" data-cambio="1"><svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg></button>
+      </div>
+    </li>
+  </template>
+</body>
+</html>

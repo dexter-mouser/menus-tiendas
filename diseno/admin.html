@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesas · Panel</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="js/mesas.js"></script>
+</head>
+<body aria-busy="true">
+  <div class="panel">
+    <!-- Barra lateral: logo, navegación y salir -->
+    <header class="lateral">
+      <div class="fila entre">
+        <div class="fila">
+          <div class="marca" aria-hidden="true" data-logo-negocio>LT</div>
+          <p class="cabecera-nombre" data-nombre-negocio>La Terraza</p>
+        </div>
+        <a class="boton-icono neutro solo-movil" href="login.html" aria-label="Cerrar sesión"><svg class="icono" aria-hidden="true"><use href="icons.svg#salir"/></svg></a>
+      </div>
+      <nav class="nav-admin" aria-label="Panel">
+        <a href="admin.html" aria-current="page"><svg class="icono" aria-hidden="true"><use href="icons.svg#mesa"/></svg>Mesas</a>
+        <a href="cocina.html" data-modulo="cocina"><svg class="icono" aria-hidden="true"><use href="icons.svg#fuego"/></svg>Cocina</a>
+        <a href="panel-resenas.html" data-modulo="resenas"><svg class="icono" aria-hidden="true"><use href="icons.svg#resenas"/></svg>Reseñas</a>
+        <a href="configuracion.html"><svg class="icono" aria-hidden="true"><use href="icons.svg#ajustes"/></svg>Ajustes</a>
+      </nav>
+      <div class="lateral-pie nav-admin">
+        <a href="login.html"><svg class="icono" aria-hidden="true"><use href="icons.svg#salir"/></svg>Cerrar sesión</a>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <!-- Título, contador de mesas y agregar -->
+      <div class="fila entre">
+        <div class="crece">
+          <h1>Mesas</h1>
+          <p class="suave chico" data-contador-mesas aria-live="polite">1 de 10 mesas</p>
+        </div>
+        <button type="button" class="boton" data-agregar-mesa>
+          <svg class="icono" aria-hidden="true"><use href="icons.svg#mas"/></svg>
+          Agregar mesa
+        </button>
+      </div>
+
+      <!-- Mesas: empieza con una, hasta 10 -->
+      <ul class="grid-mesas" id="lista-mesas">
+        <li class="tarjeta">
+          <div class="tarjeta-seccion fila entre"><h2>Mesa 1</h2><span class="etiqueta exito">Activa</span></div>
+          <div class="tarjeta-seccion"><span class="qr"></span></div>
+          <div class="tarjeta-seccion fila"><span class="boton boton-chico reparte"></span><span class="boton boton-chico reparte"></span></div>
+        </li>
+      </ul>
+    </main>
+  </div>
+
+  <!-- Plantilla de una mesa -->
+  <template id="plantilla-mesa">
+    <li class="tarjeta mesa">
+      <div class="tarjeta-seccion fila entre">
+        <h2 class="sin-corte" data-titulo></h2>
+        <div class="fila">
+          <span class="etiqueta exito estado-mesa">Activa</span>
+          <button type="button" class="boton-icono neutro" data-quitar hidden><svg class="icono" aria-hidden="true"><use href="icons.svg#basura"/></svg></button>
+        </div>
+      </div>
+      <div class="tarjeta-seccion">
+        <a class="qr-enlace" data-enlace target="_blank" rel="noopener">
+          <svg class="qr" role="img" data-qr><use href="icons.svg#qr-muestra"/></svg>
+          <span class="chico qr-texto">Abrir carta de la mesa <svg class="icono" aria-hidden="true"><use href="icons.svg#enlace"/></svg></span>
+        </a>
+      </div>
+      <div class="tarjeta-seccion fila envuelve">
+        <button type="button" class="boton boton-secundario boton-chico reparte" data-imprimir>
+          <svg class="icono" aria-hidden="true"><use href="icons.svg#imprimir"/></svg>Imprimir
+        </button>
+        <button type="button" class="boton boton-secundario boton-chico reparte" data-descargar>
+          <svg class="icono" aria-hidden="true"><use href="icons.svg#descargar"/></svg>Descargar
+        </button>
+      </div>
+    </li>
+  </template>
+
+  <!-- Plantilla del espacio para agregar -->
+  <template id="plantilla-agregar">
+    <li class="mesa-hueco">
+      <button type="button" class="mesa-agregar" data-agregar-mesa>
+        <span class="boton-icono" aria-hidden="true"><svg class="icono"><use href="icons.svg#mas"/></svg></span>
+        Agregar mesa
+      </button>
+    </li>
+  </template>
+
+  <!-- Confirmar quitar mesa -->
+  <dialog class="dialogo" id="dialogo-quitar" aria-labelledby="titulo-quitar">
+    <form method="dialog" class="pila">
+      <h2 id="titulo-quitar">¿Quitar la mesa?</h2>
+      <p class="suave">Su código QR dejará de funcionar. Esta acción no se puede deshacer.</p>
+      <div class="fila acciones-dialogo">
+        <button class="boton boton-secundario" value="cancelar">Cancelar</button>
+        <button class="boton boton-peligro" value="quitar">Quitar mesa</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

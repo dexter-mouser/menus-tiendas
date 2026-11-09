@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estado del pedido</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabecera: logo y mesa -->
+  <header class="cabecera">
+    <div class="pagina">
+      <div class="fila entre">
+        <div class="fila">
+          <div class="bloque avatar" aria-hidden="true"></div>
+          <div class="bloque linea" style="width: 140px" aria-hidden="true"></div>
+        </div>
+        <div class="bloque chip" aria-hidden="true"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pagina">
+    <div class="dos-columnas">
+      <!-- Pasos: recibido, preparando, listo -->
+      <div class="tarjeta">
+        <div class="seccion">
+          <div class="bloque titulo" aria-hidden="true"></div>
+          <div class="bloque linea w50" aria-hidden="true"></div>
+        </div>
+        <div class="seccion" style="gap: 4px">
+          <div class="paso"><div class="bloque avatar-chico" aria-hidden="true"></div><div class="crece columna"><div class="bloque linea w40" aria-hidden="true"></div></div></div>
+          <div class="bloque linea-vertical" aria-hidden="true"></div>
+          <div class="paso"><div class="bloque avatar-chico" aria-hidden="true"></div><div class="crece columna"><div class="bloque linea w50" aria-hidden="true"></div></div></div>
+          <div class="bloque linea-vertical" aria-hidden="true"></div>
+          <div class="paso"><div class="bloque avatar-chico" aria-hidden="true"></div><div class="crece columna"><div class="bloque linea w40" aria-hidden="true"></div></div></div>
+        </div>
+        <div class="seccion">
+          <div class="bloque boton" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Lo pedido -->
+      <div class="tarjeta">
+        <div class="seccion"><div class="bloque linea w50" aria-hidden="true"></div></div>
+        <div class="seccion">
+          <div class="fila entre"><div class="bloque linea w60" aria-hidden="true"></div><div class="bloque linea" style="width: 32px" aria-hidden="true"></div></div>
+          <div class="fila entre"><div class="bloque linea w70" aria-hidden="true"></div><div class="bloque linea" style="width: 32px" aria-hidden="true"></div></div>
+          <div class="fila entre"><div class="bloque linea w50" aria-hidden="true"></div><div class="bloque linea" style="width: 32px" aria-hidden="true"></div></div>
+        </div>
+        <div class="seccion">
+          <div class="fila entre"><div class="bloque linea w40" aria-hidden="true"></div><div class="bloque linea" style="width: 80px" aria-hidden="true"></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
