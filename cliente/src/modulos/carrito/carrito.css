@@ -1,0 +1,11 @@
+/* Barra y carrito */
+@layer vistas {
+  .barra-carrito {
+    position: sticky;
+    inset-block-end: 0;
+    background: var(--superficie);
+    box-shadow: 0 -4px 16px rgb(28 25 23 / 0.08);
+  }
+
+  .barra-carrito .contenedor { padding-block: var(--espacio-sm); flex-direction: row; align-items: center; justify-content: space-between; }
+}

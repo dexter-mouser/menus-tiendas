@@ -1,0 +1,41 @@
+/* Cocina */
+@layer vistas {
+  /* Cocina */
+  .tablero { display: grid; grid-template-columns: 1fr; gap: var(--espacio); align-items: start; }
+
+  .columna-tablero {
+    padding: var(--espacio-sm);
+    border-radius: var(--radio);
+    background: color-mix(in srgb, var(--borde) 45%, var(--fondo));
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+  }
+
+  .columna-titulo { padding: 4px var(--espacio-xs); }
+
+  .contador-columna {
+    min-inline-size: 28px;
+    block-size: 28px;
+    padding-inline: 8px;
+    border-radius: var(--pildora);
+    background: var(--superficie);
+    font-size: var(--texto-sm);
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+  }
+
+  .pila-tarjetas { display: flex; flex-direction: column; gap: var(--espacio-sm); }
+  .pila-tarjetas:empty { display: none; }
+  .columna-vacia { padding: var(--espacio) var(--espacio-xs); text-align: center; }
+
+  .orden { display: flex; flex-direction: column; gap: 4px; font-size: var(--texto-sm); }
+  .orden ul { display: flex; flex-direction: column; gap: 4px; }
+  .orden b { font-weight: 600; }
+  .nota { font-size: var(--texto-sm); color: var(--color-acento-texto); font-style: italic; }
+
+  @media (min-width: 768px) {
+    .tablero { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  }
+}

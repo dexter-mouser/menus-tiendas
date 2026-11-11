@@ -1,0 +1,33 @@
+/* Reseñas */
+@layer vistas {
+  /* Reseñas: estrellas con radios */
+  .estrellas { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 4px; }
+  .estrellas input { position: absolute; opacity: 0; }
+
+  .estrellas label {
+    inline-size: 44px;
+    block-size: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: color-mix(in srgb, var(--texto-suave) 70%, white);
+    cursor: pointer;
+    transition: color var(--transicion), transform var(--transicion);
+  }
+
+  .estrellas label .icono { inline-size: 32px; block-size: 32px; }
+  .estrellas label:hover,
+  .estrellas label:hover ~ label,
+  .estrellas input:checked ~ label { color: var(--color-acento); }
+  .estrellas label:active { transform: scale(0.9); }
+  .estrellas input:focus-visible + label { outline: 3px solid var(--color-acento); outline-offset: 2px; }
+
+  .puntaje { display: flex; gap: 2px; color: var(--color-acento); }
+  .puntaje .icono { inline-size: 16px; block-size: 16px; }
+  .puntaje .vacia { color: color-mix(in srgb, var(--texto-suave) 70%, white); }
+
+  /* Reseñas en el panel */
+  .promedio { font-size: 3rem; font-weight: 700; line-height: 1; }
+  .puntaje-hueco .puntaje { justify-content: center; }
+  .puntaje-hueco .puntaje .icono { inline-size: 24px; block-size: 24px; }
+}

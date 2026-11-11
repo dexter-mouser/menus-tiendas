@@ -1,0 +1,38 @@
+/* Pasos del pedido y pedido en curso */
+@layer vistas {
+  /* Pasos del pedido */
+  .pasos { display: flex; flex-direction: column; }
+  .paso { display: flex; gap: var(--espacio-sm); align-items: flex-start; position: relative; padding-block-end: var(--espacio-lg); }
+  .paso:last-child { padding-block-end: 0; }
+
+  .paso:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 15px;
+    inset-block: 34px 2px;
+    inline-size: 2px;
+    background: var(--borde);
+  }
+
+  .paso.hecho:not(:last-child)::before { background: var(--color-acento); }
+
+  .paso.hecho .icono-paso { background: var(--color-acento); border-color: var(--color-acento); color: #fff; }
+  .paso.actual .icono-paso { border-color: var(--color-acento); color: var(--color-acento); }
+  .paso.actual .paso-titulo { color: var(--color-acento-texto); }
+  .paso-titulo { font-weight: 600; }
+
+  .pedido-en-curso {
+    padding: var(--espacio-sm) var(--espacio);
+    flex-direction: row;
+    align-items: center;
+    gap: var(--espacio-sm);
+    color: var(--texto);
+    text-decoration: none;
+    border: 1px solid color-mix(in srgb, var(--color-acento) 30%, white);
+    transition: box-shadow var(--transicion);
+  }
+
+  .pedido-en-curso:hover { box-shadow: var(--sombra-alta); }
+  .pedido-en-curso .icono-paso { border-color: var(--color-acento); color: var(--color-acento); }
+  .pedido-en-curso > .icono { color: var(--texto-suave); }
+}

@@ -1,0 +1,69 @@
+/* Mesas */
+@layer vistas {
+  /* Mesas */
+  .grid-mesas { display: grid; grid-template-columns: 1fr; gap: var(--espacio); }
+  .qr { display: block; inline-size: 160px; block-size: 160px; margin-inline: auto; border-radius: var(--radio-chico); }
+
+  .qr-enlace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacio-sm);
+    padding: var(--espacio-sm);
+    border-radius: var(--radio-chico);
+    color: var(--texto);
+    text-decoration: none;
+    transition: background-color var(--transicion);
+  }
+
+  .qr-enlace:hover { background: var(--fondo); }
+  .qr-texto { display: inline-flex; align-items: center; gap: 4px; color: var(--color-acento-texto); font-weight: 600; }
+  .qr-texto .icono { inline-size: 14px; block-size: 14px; }
+  .qr-enlace:hover .qr-texto { text-decoration: underline; }
+  .estado-mesa { display: inline-flex; align-items: center; gap: var(--espacio-xs); }
+  .estado-mesa::before { content: ''; inline-size: 8px; block-size: 8px; border-radius: 50%; background: var(--color-exito); }
+
+  .mesa-agregar {
+    inline-size: 100%;
+    min-block-size: 300px;
+    border: 2px dashed var(--borde);
+    border-radius: var(--radio);
+    background: transparent;
+    color: var(--texto-suave);
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espacio-sm);
+    transition: border-color var(--transicion), color var(--transicion), background-color var(--transicion);
+  }
+
+  .mesa-agregar:hover:not(:disabled) { border-color: var(--color-acento); color: var(--color-acento-texto); background: var(--color-acento-suave); }
+  .mesa-agregar .boton-icono { pointer-events: none; }
+  .mesa-agregar:disabled { cursor: not-allowed; opacity: 0.6; }
+  .mesa-hueco { display: grid; }
+
+  @media (min-width: 768px) {
+    .grid-mesas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (min-width: 1200px) {
+    .grid-mesas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+}
+
+/* Imprimir solo el QR de una mesa */
+@layer estados {
+  @media print {
+    .imprimiendo .lateral,
+    .imprimiendo main > :not(.grid-mesas),
+    .imprimiendo .grid-mesas > :not(:has(.para-imprimir)),
+    .imprimiendo .para-imprimir .tarjeta-seccion:last-child,
+    .imprimiendo [data-quitar],
+    .imprimiendo .qr-texto { display: none; }
+    .imprimiendo .grid-mesas { display: block; }
+    .imprimiendo .para-imprimir { box-shadow: none; max-inline-size: 400px; margin-inline: auto; }
+    .imprimiendo .qr { inline-size: 300px; block-size: 300px; }
+  }
+}
